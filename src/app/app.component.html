@@ -1,0 +1,83 @@
+<div class="container">
+ 
+  <div class="title">
+    <h1>{{ title }}! </h1>
+  </div>
+
+  <div class="starter-template">
+
+    <div class="row">      	
+
+      <div class="col-md-12 mt-5">
+  
+      <form [formGroup]="contacto" (ngSubmit)="saveSupportContact()">
+            <div class="form-group">
+                    <label>Nombre completo</label>
+                    <input type="text" formControlName="nombreC" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.nombreC.errors }" />
+                    <div *ngIf="f.nombreC.errors" class="invalid-feedback">
+                        <div *ngIf="f.nombreC.errors.required">El nombre completo es obligatorio</div>
+                        <div *ngIf="f.nombreC.errors.pattern">Por favor, ingresa un nombre válido (solo debe contener letras)</div>
+                    </div>
+                </div> 
+                <div class="form-group">
+                  <label>Nombre de la empresa</label>
+                  <input type="text" formControlName="nombreE" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.nombreE.errors }" />
+                  <div *ngIf="f.nombreE.errors" class="invalid-feedback">
+                      <div *ngIf="f.nombreE.errors.required">Por favor, ingresa nombre de la empresa</div>
+                  </div>
+              </div>                    
+              <div class="form-group">
+                  <label>Correo electrónico</label>
+                  <input type="email" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                  <div *ngIf=" f.email.errors" class="invalid-feedback">
+                      <div *ngIf="f.email.errors.required">El correo electrónico es obligatorio</div>
+                      <div *ngIf="f.email.errors.email">Por favor, ingresa un correo electrónico válido</div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label>Teléfono</label>
+                      <input type="tel" formControlName="telefono" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.telefono.errors }" />
+                      <div *ngIf=" f.telefono.errors" class="invalid-feedback">
+                          <div *ngIf="f.telefono.errors.required">El teléfono es obligatorio</div>
+                          <div *ngIf="f.telefono.errors.pattern">Por favor, ingresa un número telefónico válido (de 11 digitos no letras)</div>
+                      </div>
+                  </div> 
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="categoria"> Categoría</label>
+                      <select class="form-control" formControlName="categoria" [ngClass]="{ 'is-invalid': submitted && f.categoria.errors }">
+                        <option value="">Seleccionar</option>
+                        <option value="{{categoria}}" *ngFor="let categoria of categorias">{{ categoria }}</option>
+                      </select>
+                      <div *ngIf=" f.categoria.errors" class="invalid-feedback">
+                          <div *ngIf="f.categoria.errors.required">Por favor, selecciona una categoría</div>
+                      </div>
+                    </div> 
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="mensaje">Mensaje</label>
+                  <textarea class="form-control" formControlName="mensaje" rows="3" [ngClass]="{ 'is-invalid': submitted && f.mensaje.errors }"></textarea>
+                  <div *ngIf="f.mensaje.errors" class="invalid-feedback">
+                      <div *ngIf="f.mensaje.errors.required">Por favor, ingresa el mensaje ( 6 caracteres mínimo )</div>
+                  </div>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-primary">
+                      Enviar
+                    </button>
+                </div>
+ 
+            </form>
+
+    </div>
+
+
+</div>
+
+ </div>
+
+</div>

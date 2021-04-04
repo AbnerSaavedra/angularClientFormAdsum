@@ -1,0 +1,20 @@
+.title{
+
+    color: #fff;
+    background-color: #B3E61B;
+    text-align: center;
+    padding: 2em;
+}
+
+label{
+
+    font-weight: bold;
+}
+
+button,
+button:hover, 
+button:active{
+
+    background-color: #B3E61B;
+    border-color: #B3E61B; 
+}
