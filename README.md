@@ -6,7 +6,7 @@ npm install ó yarn install
 
 ng serve --port=8081
 
-**Luego de ejecutar estará disponible en: https://localhost:8081**
+**Luego de ejecutar estará disponible en: http://localhost:8081**
 
 ## Descargue servidor
 
