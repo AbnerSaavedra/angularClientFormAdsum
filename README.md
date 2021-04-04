@@ -1,6 +1,6 @@
 ## Instale dependencias
 
-npm install
+npm install ó yarn install
 
 ## Ejecute
 
